@@ -137,3 +137,31 @@ if __name__ == '__main__':
 	print("Index of the element is : ", \
 		pivotedBinarySearch(arr1, n, key))
 
+	
+# Given an array arr of positive integers sorted in a strictly increasing order, and an integer k.
+# Write a function to return the kth positive integer that is missing from this array.
+
+
+def findKthPositive(self, arr, k: int) -> int:
+		strt = 0
+		end = len(arr)-1
+		while strt <= end:
+			mid = strt+(end-strt)//2
+			if arr[mid]-mid-1 < k:
+				strt = mid+1
+			else:
+				end = mid-1
+		return strt+k
+
+a = [1, 5, 11, 19]
+ 
+# k-th missing element
+# to be found in the array
+k = 11
+n = len(a)
+ 
+# calling function to
+# find missing element
+missing = findKthPositive(n,a, k)
+ 
+print(missing)
