@@ -51,3 +51,16 @@ A=[1,2,3,4,4,7]
 ans=0
 print(func(A,ans,4))
 
+#Given a sorted array of n elements, possibly with duplicates,
+#find the number of occurrences of the target element.	
+
+def func(A,a):
+    n=len(A)
+    for x in range(n-1):
+        if(A[x]>A[x+1] and A[x-1]<A[x]):
+            return x
+
+
+A=[1,2,3,4,8,7]
+ans=0
+print(func(A,ans))
