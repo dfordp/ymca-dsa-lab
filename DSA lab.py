@@ -165,3 +165,22 @@ n = len(a)
 missing = findKthPositive(n,a, k)
  
 print(missing)
+
+# Write a program to implement stack using array (Show all the operations like insertion, deletion and display)
+
+
+stack = []
+#insertion 
+stack.append('a')
+stack.append('b')
+stack.append('c')
+#display
+print('Initial stack')
+print(stack)
+#deletion
+print('\nElements popped from stack:')
+print(stack.pop())
+print(stack.pop())
+
+print('\nStack after elements are popped:')
+print(stack)
