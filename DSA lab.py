@@ -424,3 +424,48 @@ if __name__ == '__main__':
     ob.enqueue(20)
     ob.enqueue(5)
     ob.display()
+
+#Implement Singly Linked List
+
+class Node:
+    def __init__(self,dataval=None):
+        self.dataval=dataval
+        self.next=None
+class linkedList:
+    def __init__(self):
+        self.headNode=None
+    def listPrint(self):
+        printval=self.headNode
+        while printval is not None:
+            print(printval.dataval)
+            printval=printval.next
+    def AtBegining(self,newdata):
+      newNode = Node(newdata)
+      newNode.next=self.headNode
+      self.headNode=newNode
+    def AtEnd(self,newdata):
+        newNode=Node(newdata)
+        if(self.headNode is None):
+            self.headNode=newNode
+            return
+        last=self.headNode
+        while(last.next):
+            last=last.next
+        last.next=newNode
+    def Inbetween(self,mnode,newdata):
+            if mnode is None:
+                print("The nentioned node is absent")
+                return
+            NewNode=Node(newdata)
+            NewNode.next=mnode.next
+            mnode.next=NewNode
+list=linkedList()
+list.headNode=Node("Mon")
+e2=Node("Tue")
+e3=Node("Wed")
+list.headNode.next=e2
+e2.next=e3
+list.AtBegining("Sun")
+list.AtEnd("Thu")
+list.Inbetween(list.headNode.next,"Fri")
+list.listPrint()
