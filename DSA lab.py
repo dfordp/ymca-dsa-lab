@@ -542,3 +542,64 @@ llist.append(4)
 llist.insertAfter(llist.head.next, 8) 
 print("Created DLL is: ", end =" ")
 llist.printList(llist.head)
+
+
+#Implement Stack using Linked List
+
+class Node:
+    def __init__(self,data) :
+        self.data=data
+        self.next=None
+class Stack:
+    def __init__(self):
+        self.head=None
+    def isEmpty(self):
+        if self.head==None:
+            return True
+        else:
+            return False
+    def push(self,data):
+        if self.head==None:
+            self.head=Node(data)
+        else:
+            newNode=Node(data)
+            newNode.next=self.head
+            self.head=newNode
+    def pop(self):
+        if self.isEmpty():
+            return None
+        popnode=self.head
+        self.head=self.head.next
+        popnode.next=None
+        return popnode.data
+    def peek(self):
+        if self.isEmpty():
+            return None
+        else:
+            return self.head.data
+    def display(self):
+        rnode=self.head
+        if self.isEmpty():
+            print("Stack Underflow")
+        else:
+            while(rnode!=None):
+                print(rnode.data,end="")
+                rnode=rnode.next
+                if(rnode!=Node):
+                    print("->",end="")
+                return
+Stack=Stack()
+
+Stack.push(11)
+Stack.push(22)
+Stack.push(33)
+Stack.push(44)
+
+Stack.display()
+
+Stack.pop()
+Stack.pop()
+
+Stack.display()
+
+print("\n Top element is :",Stack.peek())
