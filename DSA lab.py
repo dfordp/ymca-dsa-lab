@@ -786,3 +786,66 @@ tree.insert(10)
 tree.insert(40)
 tree.insert(60)
 tree.inorder()
+
+
+#Write a program to traverse Binary Search Tree
+
+class Node:
+    left=None
+    val=0
+    right=None
+
+    def __init__(self,val) -> None:
+        self.val=val
+
+def printInorder(root):
+ 
+    if root:
+ 
+        # First recur on left child
+        printInorder(root.left)
+ 
+        # then print the data of node
+        print(root.val),
+ 
+        # now recur on right child
+        printInorder(root.right)
+
+def printPreorder(root):
+ 
+    if root:
+ 
+        # First print the data of node
+        print(root.val),
+ 
+        # Then recur on left child
+        printPreorder(root.left)
+ 
+        # Finally recur on right child
+        printPreorder(root.right)
+ 
+def printPostorder(root):
+ 
+    if root:
+ 
+        # First recur on left child
+        printPostorder(root.left)
+ 
+        # the recur on right child
+        printPostorder(root.right)
+ 
+        # now print the data of node
+        print(root.val),
+
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+print ("\nInorder traversal of binary tree is")
+printInorder(root)
+print ("Preorder traversal of binary tree is")
+printPreorder(root)
+print ("\nPostorder traversal of binary tree is")
+printPostorder(root)
